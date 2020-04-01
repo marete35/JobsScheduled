@@ -1,0 +1,14 @@
+JOB 2020-03-31 21:54:00,486 INFO ar.com.marete.scheduled.JobsScheduledApplication [restartedMain] Starting JobsScheduledApplication on martita with PID 26119 (/home/devel/desarrollo_gitlab/JobsScheduled/target/classes started by devel in /home/devel/desarrollo_gitlab/JobsScheduled)
+JOB 2020-03-31 21:54:00,488 DEBUG ar.com.marete.scheduled.JobsScheduledApplication [restartedMain] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+JOB 2020-03-31 21:54:00,488 INFO ar.com.marete.scheduled.JobsScheduledApplication [restartedMain] The following profiles are active: prod
+JOB 2020-03-31 21:54:00,560 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+JOB 2020-03-31 21:54:01,079 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [restartedMain] Initializing ExecutorService 'taskScheduler'
+JOB 2020-03-31 21:54:01,116 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+JOB 2020-03-31 21:54:01,137 INFO ar.com.marete.scheduled.jobs.BaseJob [scheduling-1] TestJob.tarea1 - Tarea usando fixedRate cada 3 segundos - 1585702441
+JOB 2020-03-31 21:54:01,138 INFO ar.com.marete.scheduled.jobs.BaseJob [scheduling-1] TestJob.tarea2 - Tarea usando fixedRateString cada 5 segundos - 1585702441
+JOB 2020-03-31 21:54:01,139 INFO ar.com.marete.scheduled.jobs.BaseJob [scheduling-1] TestJob2.tarea1 - Tarea usando fixedRate cada 3 segundos - 1585702441
+JOB 2020-03-31 21:54:01,139 INFO ar.com.marete.scheduled.jobs.BaseJob [scheduling-1] TestJob2.tarea2 - Tarea usando fixedRateString cada 5 segundos - 1585702441
+JOB 2020-03-31 21:54:01,142 INFO ar.com.marete.scheduled.JobsScheduledApplication [restartedMain] Started JobsScheduledApplication in 1.127 seconds (JVM running for 1.553)
+JOB 2020-03-31 21:54:04,136 INFO ar.com.marete.scheduled.jobs.BaseJob [scheduling-1] TestJob.tarea1 - Tarea usando fixedRate cada 3 segundos - 1585702444
+JOB 2020-03-31 21:54:04,137 INFO ar.com.marete.scheduled.jobs.BaseJob [scheduling-1] TestJob2.tarea1 - Tarea usando fixedRate cada 3 segundos - 1585702444
+JOB 2020-03-31 21:54:04,384 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [SpringContextShutdownHook] Shutting down ExecutorService 'taskScheduler'
