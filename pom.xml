@@ -19,17 +19,79 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<profiles>
+		<profile>
+			<!-- nombre del perfil, en este caso, el ambiente a configurar -->
+			<id>dev</id>
+			<!-- indicamos que este perfil es el default, para no tener que indicarlo 
+				al compilar, esto sirve como seguridad en caso de que alguien compile una 
+				version en su ambiente local, no se conecte a PROD u otro ambiente de mayor 
+				impacto al negocio -->
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env>dev</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>qa</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<env>qa</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<env>prod</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>localhost_dev</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<env>localhost_dev</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>localhost_qa</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<env>localhost_qa</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>localhost_prod</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<env>localhost_prod</env>
+			</properties>
+		</profile>
+	</profiles>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		
-		 <!-- send email -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
+
+		<!-- send email -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -53,8 +115,8 @@
 			<artifactId>ojdbc8</artifactId>
 			<version>12.2.0.1</version>
 			<scope>provided</scope>
-		</dependency> 
-		
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -64,6 +126,22 @@
 	</dependencies>
 
 	<build>
+		<!-- Loading all ${} -->
+		<filters>
+			<filter>src/main/resources/env/config.${env}.properties</filter>
+		</filters>
+		<!-- Map ${} into resources -->
+		<resources>
+			<resource>
+				<!-- el path partiendo del src root del proyecto -->
+				<directory>src/main/resources</directory>
+				<!-- indicar que utilizaremos filtros en el buid. -->
+				<filtering>true</filtering>
+				<includes>
+					<include>*.properties</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
